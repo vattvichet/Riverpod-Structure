@@ -12,12 +12,10 @@ class UploadPage extends ConsumerStatefulWidget {
   ConsumerState<UploadPage> createState() => _WidgetState();
 }
 
-TextEditingController userIDInput = TextEditingController();
 TextEditingController titleInput = TextEditingController();
 TextEditingController descriptionInput = TextEditingController();
 
 void clearText() {
-  userIDInput.clear();
   titleInput.clear();
   descriptionInput.clear();
 }
@@ -35,12 +33,9 @@ getSuccessSnackBar(UploadModel m) {
 }
 
 validatorCheck(context) {
-  userIDInput.text.trim();
   descriptionInput.text.trim();
   titleInput.text.trim();
-  if (userIDInput.text.isEmpty ||
-      descriptionInput.text.isEmpty ||
-      titleInput.text.isEmpty) {
+  if (descriptionInput.text.isEmpty || titleInput.text.isEmpty) {
     context.pop();
     return;
   }
@@ -77,33 +72,6 @@ class _WidgetState extends ConsumerState<UploadPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      height: 50,
-                      width: 100,
-                      child: TextField(
-                        keyboardType: const TextInputType.numberWithOptions(
-                          decimal: false,
-                        ),
-                        controller: userIDInput,
-                        decoration: InputDecoration(
-                          hintText: 'User ID',
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                width: 3, color: Colors.redAccent),
-                            borderRadius: BorderRadius.circular(18.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                width: 3,
-                                color: Colors.greenAccent), //<-- SEE HERE
-                            borderRadius: BorderRadius.circular(18.0),
-                          ),
-                        ),
                       ),
                     ),
                     const SizedBox(
@@ -177,7 +145,7 @@ class _WidgetState extends ConsumerState<UploadPage> {
                             final result = await ref.watch(
                               uploadPostProvider(
                                 UploadModel(
-                                  userId: int.parse(userIDInput.text),
+                                  userId: 1,
                                   title: titleInput.text,
                                   body: descriptionInput.text,
                                 ),

@@ -3,11 +3,11 @@ import 'package:http/http.dart';
 
 import 'package:riverpod_structure/pages/uploads/upload_model.dart';
 
-abstract class IUploadRepository {
+abstract class IUploadPostRepository {
   Future<UploadModel?> uploadPost(UploadModel body);
 }
 
-class UploadRepository implements IUploadRepository {
+class UploadPostRepository implements IUploadPostRepository {
   @override
   Future<UploadModel?> uploadPost(UploadModel body) async {
     String url = 'https://jsonplaceholder.typicode.com/posts';

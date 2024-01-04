@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:riverpod_structure/pages/page_data/page_data_model.dart';
 
-abstract class IGetRepository {
+abstract class IGetPostRepository {
   Future<List<PostModel>?> fetchPost();
 }
 
-class GetRepository implements IGetRepository {
+class GetPostRepository implements IGetPostRepository {
   @override
   Future<List<PostModel>?> fetchPost() async {
     String url = "https://jsonplaceholder.typicode.com/posts";
