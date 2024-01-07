@@ -6,15 +6,15 @@ final counterProvider = StateProvider.autoDispose<int>(
   (ref) => 0,
 );
 
-class TestPageView extends ConsumerWidget {
-  const TestPageView({super.key});
+class StateNotifierView extends ConsumerWidget {
+  const StateNotifierView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final counter = ref.watch(counterProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Test Page"),
+        title: const Text("Test (StateProvider)"),
         actions: [
           IconButton(
             onPressed: () {

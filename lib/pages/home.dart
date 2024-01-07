@@ -40,9 +40,21 @@ class HomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(AppRoute.testPage.name);
+                context.pushNamed(AppRoute.stateProviderPage.name);
               },
-              child: const Text("Test Page"),
+              child: const Text("StateProvider Page"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.pushNamed(AppRoute.stateNotifierProviderPage.name);
+              },
+              child: const Text("StateNotifierProvider Page"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.pushNamed(AppRoute.familyModifierPage.name);
+              },
+              child: const Text("FamilyModifier Page"),
             ),
           ],
         ),
