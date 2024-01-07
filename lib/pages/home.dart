@@ -38,6 +38,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text("Uploads"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                context.pushNamed(AppRoute.testPage.name);
+              },
+              child: const Text("Test Page"),
+            ),
           ],
         ),
       ),
